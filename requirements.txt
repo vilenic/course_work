@@ -8,3 +8,4 @@ uwsgi>=2.0.15
 psycopg2>=2.7.1
 django-easycart>=0.4.0
 gunicorn
+django-heroku
