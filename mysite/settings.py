@@ -123,7 +123,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/es/2.0/topics/auth/
 
 LOGIN_URL = '/shop/login'
-LOGIN_REDIRECT_URL = '/shop'
+LOGIN_REDIRECT_URL = ''
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
