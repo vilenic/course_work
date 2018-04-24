@@ -9,14 +9,6 @@ verify_ssl = true
 django = "*"
 gunicorn = "*"
 django-heroku = "*"
-django-debug-toolbar
-pytz
-sqlparse
-wheel
-django-queryinspect
-uwsgi
-psycopg2
-django-easycart
 
 
 [requires]
