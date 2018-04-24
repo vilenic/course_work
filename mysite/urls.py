@@ -23,13 +23,8 @@ from cart import urls as cart_urls
 urlpatterns = [
 
     path('admin/', admin.site.urls),
-    path('', include((web_shop_urls, 'web_shop'), namespace='web_shop')),
+    path('/', include((web_shop_urls, 'web_shop'), namespace='web_shop')),
     path('cart/', include((cart_urls, 'cart'), namespace='cart')),
 
 ]
 
-if settings.DEBUG:
-    import debug_toolbar
-    urlpatterns += [
-        path('__debug__/', include(debug_toolbar.urls)),
-    ]
