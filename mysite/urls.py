@@ -23,7 +23,7 @@ from cart import urls as cart_urls
 urlpatterns = [
 
     path('admin/', admin.site.urls),
-    path('/', include((web_shop_urls, 'web_shop'), namespace='web_shop')),
+    path('shop/', include((web_shop_urls, 'web_shop'), namespace='web_shop')),
     path('cart/', include((cart_urls, 'cart'), namespace='cart')),
 
 ]
