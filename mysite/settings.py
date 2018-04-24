@@ -42,14 +42,10 @@ INSTALLED_APPS = [
     'web_shop',
 
     # Debug toolbar
-    'debug_toolbar',
+    # 'debug_toolbar',
 
     # Easycart
     'easycart'
-]
-
-INTERNAL_IPS = [
-    '127.0.0.1',
 ]
 
 MIDDLEWARE = [
