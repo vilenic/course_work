@@ -1,0 +1,122 @@
+[
+  {
+    "pk": 1,
+    "model": "web_shop.Item",
+    "fields": {
+      "name": "T580, 15inch, 4K, 2018, 2.0Ghz",
+      "description": "A really nice notebook",
+      "category": 1,
+      "sub_category": 3,
+      "manufacturer": 2,
+      "price": 133490
+    }
+  },
+  {
+    "model": "web_shop.Item",
+    "pk": 2,
+    "fields": {
+      "name": "Alienware 17 Silver, 17.3 UHD 4K, 2.8GHz",
+      "description": "A really nice gaming notebook",
+      "category": 1,
+      "sub_category": 4,
+      "manufacturer": 4,
+      "price": 180020
+    }
+  },
+  {
+    "model": "web_shop.Item",
+    "pk": 3,
+    "fields": {
+      "name": "XPS 13",
+      "description": "A really nice notebook",
+      "category": 1,
+      "sub_category": 5,
+      "manufacturer": 4,
+      "price": 112240
+    }
+  },
+  {
+    "model": "web_shop.Item",
+    "pk": 4,
+    "fields": {
+      "name": "MacBook 12 Rose Gold",
+      "description": "A nice thin notebook",
+      "category": "1",
+      "sub_category": "5",
+      "manufacturer": "1",
+      "price": 108160
+    }
+  },
+  {
+    "model": "web_shop.Item",
+    "pk": 5,
+    "fields": {
+      "name": "Mac Pro",
+      "description": "A powerfull workstation",
+      "category": "2",
+      "sub_category": "1",
+      "manufacturer": "1",
+      "price": 212410
+    }
+  },
+  {
+    "model": "web_shop.Item",
+    "pk": 6,
+    "fields": {
+      "name": "Alienware Aurora",
+      "description": "A powerfull gaming PC",
+      "category": "2",
+      "sub_category": "2",
+      "manufacturer": "4",
+      "price": 107150
+    }
+  },
+  {
+    "model": "web_shop.Item",
+    "pk": 7,
+    "fields": {
+      "name": "Galaxy Note 8 64Gb",
+      "description": "A mobile phone",
+      "category": 3,
+      "sub_category": 1,
+      "manufacturer": 3,
+      "price": 64000
+    }
+  },
+  {
+    "model": "web_shop.Item",
+    "pk": 8,
+    "fields": {
+      "name": "IdeaPhone A7000 White",
+      "description": "A mobile phone",
+      "category": 3,
+      "sub_category": 2,
+      "manufacturer": 2,
+      "price": 13030
+    }
+  },
+  {
+    "model": "web_shop.Item",
+    "pk": 9,
+    "fields": {
+      "name": "Galaxy Gear S3 Frontier Dark Grey",
+      "description": "A smart watch",
+      "category": 4,
+      "sub_category": 1,
+      "manufacturer": 3,
+      "price": 21870
+    }
+  },
+  {
+    "model": "web_shop.Item",
+    "pk": 10,
+    "fields": {
+      "name": "Gear Fit2 Pro (L) Black/Red",
+      "description": "A smart watch",
+      "category": 4,
+      "sub_category": 2,
+      "manufacturer": 3,
+      "price": 12010
+    }
+  }
+]

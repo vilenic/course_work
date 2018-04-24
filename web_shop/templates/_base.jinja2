@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  {% block head %}
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+  <!-- FontAwesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+    crossorigin="anonymous"></script>
+
+  <title>{% block title %}{% endblock %} - TechShopper</title>
+  {% endblock %}
+</head>
+
+<body>
+
+  {% with w_lg="col-lg-7" w_sm='col-sm-4' %}
+
+  <div class="container-fluid {{ w_lg }} {{ w_sm }}" style="margin-top: 30px">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{% url 'web_shop:index' %}" style="font-size: 26px">
+        <img src="{{ MEDIA_URL }}img/che.png" width="50px" height="38px" class="d-inline-block align-middle"> TechShopper
+      </a>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto" style="font-size: 20px">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'web_shop:index' %}">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'web_shop:cart' %}">View cart
+            </a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          {% if user.is_authenticated %} User: {{ user }}
+          <a href="{% url 'web_shop:logout' %}" class="text-muted">(logout)</a>
+          {% else %} User: guest
+          <a href="{% url 'web_shop:login' %}" class="text-muted">(login)</a> or
+              <a href="{% url 'web_shop:register' %}" class="text-muted">(register)</a>
+          {% endif %}
+        </span>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container-fluid {{ w_lg }} {{ w_sm }}" style="margin-top: 5px">
+
+  <nav aria-label="breadcrumb">
+      <ol class="breadcrumb" style="font-size: 12px; padding: 3px; margin-bottom: 0; margin-top: 5px;">
+        <li class="breadcrumb-item"><a class="text-muted" style="margin-left: 5px" href="/shop/">Main</a></li>
+        {% if cur_category %}
+        <li class="breadcrumb-item"><a class="text-muted" href="{% url 'web_shop:index' %}?category={{ cur_category }}">{{ cur_category }}</a></li>
+        {% endif %}
+        {% if cur_sub_category %}
+        <li class="breadcrumb-item"><a class="text-muted" href="{% url 'web_shop:index' %}?sub_category={{ cur_sub_category }}">{{ cur_sub_category }}</a></li>
+        {% endif %}
+        {% if cur_brand %}
+        <li class="breadcrumb-item"><a class="text-muted" href="{% url 'web_shop:index' %}?manufacturer={{ cur_brand }}">{{ cur_brand }}</a></li>
+        {% endif %}
+      </ol>
+    </nav>
+
+  </div>
+
+  <div class="container-fluid {{ w_lg }} {{ w_sm }}" style="margin-top: 0; padding-top: 0">
+    <div class="row">
+    <form action="{% url 'web_shop:index' %}" method="get">
+      <div class="col-sm-2">
+      <div class="text-muted" style="margin-top: 30px">
+          Categories
+      </div>
+{#        <button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse" data-target="#categories" aria-expanded="true"#}
+{#          aria-controls="categories" style="margin-top: 5px">#}
+{#          Categories#}
+{#        </button>#}
+{#        <div class="collapse" id="categories">#}
+          <nav class="nav flex-column">
+            {% for category in categories %}
+            <div class="form-check form-check-inline">
+              <input class="form-check-input position-static" type="radio" name="category" id="category_{{ category }}" value="{{ category }}">
+                <a class="nav-link text-dark" href="{% url 'web_shop:index' %}?category={{ category.name }}" style="padding: 5px; font-size: 12px">
+                {{ category }}
+                </a>
+            </div>
+            {% endfor %}
+          </nav>
+{#        </div>#}
+{#        <button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse" data-target="#sub_categories" aria-expanded="false"#}
+{#          aria-controls="collapseExample" style="margin-top: 5px">#}
+{#           Type#}
+{#        </button>#}
+{#        <div class="collapse" id="sub_categories">#}
+          <div class="text-muted" style="margin-top: 30px">
+              SubCategories
+          </div>
+          <nav class="nav flex-column" style="font-size:12px">
+            {% for sub_category in sub_categories %}
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input position-static" type="radio" name="sub_category" id="sub_category_{{ sub_category }}" value="{{ sub_category }}">
+                    <a class="nav-link text-dark" href="{% url 'web_shop:index' %}?sub_category={{ sub_category.name }}" style="padding: 5px; font-size: 12px">
+                        {{ sub_category }}
+                    </a>
+                </div>
+            {% endfor %}
+          </nav>
+{#        </div>#}
+{#        <button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse" data-target="#brands" aria-expanded="false"#}
+{#          aria-controls="collapseExample" style="margin-top: 5px">#}
+{#          Brands#}
+{#        </button>#}
+{#        <div class="collapse" id="brands">#}
+          <div class="text-muted" style="margin-top: 30px">
+              Brands
+          </div>
+          <nav class="nav flex-column" style="font-size:12px">
+            {% for brand in brands %}
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input position-static" type="radio" name="manufacturer" id="brand_{{ brand }}" value="{{ brand }}">
+                    <a class="nav-link text-dark" href="{% url 'web_shop:index' %}?manufacturer={{ brand.name }}" style="padding: 5px; font-size: 12px">
+                        {{ brand }}
+                    </a>
+                </div>
+            {% endfor %}
+          </nav>
+{#        </div>#}
+            <button class="btn btn-sm btn-success" type="submit"><i class="fas fa-check-circle"></i></button>
+            <button class="btn btn-sm btn-warning" type="reset"><i class="fas fa-recycle"></i></button>
+      </div>
+    </form>
+
+      {% block content %} {% endblock %}
+
+    </div>
+
+  </div>
+  {% endwith %}
+
+</body>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"></script>

@@ -1,0 +1,37 @@
+[
+  {
+    "pk": 1,
+    "model": "web_shop.SubCategory",
+    "fields": {
+      "name": "High-performance"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "web_shop.SubCategory",
+    "fields": {
+      "name": "Mainstream"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "web_shop.SubCategory",
+    "fields": {
+      "name": "Office"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "web_shop.SubCategory",
+    "fields": {
+      "name": "Gaming"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "web_shop.SubCategory",
+    "fields": {
+      "name": "Thin'and'light"
+    }
+  }
+  ]

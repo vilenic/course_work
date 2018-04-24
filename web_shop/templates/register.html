@@ -1,0 +1,14 @@
+{% extends '_base.jinja2' %}
+
+{% block content %}
+
+<div class="container-fluid col-lg-7" style="margin-top: 50px;">
+<h3>Registration</h3>
+
+<form action="{% url 'web_shop:register' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+</div>
+{% endblock %}
