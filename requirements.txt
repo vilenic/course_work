@@ -5,7 +5,7 @@ sqlparse
 wheel
 django-queryinspect>=1.0.0
 uwsgi>=2.0.15
-psycopg2>=2.7.1
+psycopg2-binary
 django-easycart>=0.4.0
 gunicorn
 django-heroku
