@@ -3,12 +3,12 @@
     "pk": 1,
     "model": "web_shop.Item",
     "fields": {
-      "name": "T580, 15inch, 4K, 2018, 2.0Ghz",
-      "description": "A really nice notebook",
+      "name": "MSI GT75 (8RG-053) Titan",
+      "description": "17.3 Full HD, Intel Core i7 8750H, 2200 МГц, 16384 Мб, 1000 Гб, 256 Гб SSD, GeForce GTX 1080 8192 Мб, Wi-Fi, Bluetooth, Cam, Windows 10 Home (64 bit), чёрный",
       "category": 1,
-      "sub_category": 3,
-      "manufacturer": 2,
-      "price": 133490
+      "sub_category": 4,
+      "manufacturer": 6,
+      "price": 205120
     }
   },
   {

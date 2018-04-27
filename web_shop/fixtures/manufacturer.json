@@ -17,7 +17,7 @@
     "pk": 3,
     "model": "web_shop.Manufacturer",
     "fields": {
-      "name": "Samsung"
+      "name": "HP"
     }
   },
   {
@@ -32,6 +32,13 @@
     "model": "web_shop.Manufacturer",
     "fields": {
       "name": "Asus"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "web_shop.Manufacturer",
+    "fields": {
+      "name": "MSI"
     }
   }
 ]
